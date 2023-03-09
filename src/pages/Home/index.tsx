@@ -1,12 +1,32 @@
-import { NavLink } from "react-router-dom";
-import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import "./styles.scss";
+
+import image01 from "../../assets/images/slide01.jpg";
+import image02 from "../../assets/images/slide02.jpg";
+import image03 from "../../assets/images/slide03.jpg";
 
 export const Home = () => {
   return (
     <div>
       <Header />
-      {/* <NavLink to="/product">Messages</NavLink> */}
+      <div className="carousel-container-wapper">
+        <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
+          <div>
+            <img src={image01} />
+            <p className="legend">Shop now</p>
+          </div>
+          <div>
+            <img src={image02} />
+            <p className="legend">Shop now</p>
+          </div>
+          <div>
+            <img src={image03} />
+            <p className="legend">Shop now</p>
+          </div>
+        </Carousel>
+      </div>
     </div>
   );
 };
