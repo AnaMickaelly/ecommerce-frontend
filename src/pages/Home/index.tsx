@@ -6,6 +6,9 @@ import "./styles.scss";
 import image01 from "../../assets/images/slides/slide01.jpg";
 import image02 from "../../assets/images/slides/slide02.jpg";
 import image03 from "../../assets/images/slides/slide03.jpg";
+import trends01 from "../../assets/images/home/tendencies01.jpg";
+import trends02 from "../../assets/images/home/tendencies03.jpg";
+import trends03 from "../../assets/images/home/tendencies02.jpg";
 
 export const Home = () => {
   return (
@@ -26,6 +29,16 @@ export const Home = () => {
             <p className="legend">Shop now</p>
           </div>
         </Carousel>
+        <div className="trends-wrapper">
+          <h2>Tendências</h2>
+          <div className="trends-images">
+            <div className="trends-images-right">
+              <img className="trends-images-small" src={trends01} />
+              <img className="trends-images-small" src={trends02} />
+            </div>
+            <img className="trends-images-big" src={trends03} />
+          </div>
+        </div>
       </div>
     </div>
   );
