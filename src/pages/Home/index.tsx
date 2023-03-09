@@ -9,6 +9,7 @@ import image03 from "../../assets/images/slides/slide03.jpg";
 import trends01 from "../../assets/images/home/tendencies01.jpg";
 import trends02 from "../../assets/images/home/tendencies03.jpg";
 import trends03 from "../../assets/images/home/tendencies02.jpg";
+import { Cards } from "../../components/Cards";
 
 export const Home = () => {
   return (
@@ -29,15 +30,28 @@ export const Home = () => {
             <p className="legend">Shop now</p>
           </div>
         </Carousel>
-        <div className="trends-wrapper">
-          <h2>Tendências</h2>
-          <div className="trends-images">
-            <div className="trends-images-right">
-              <img className="trends-images-small" src={trends01} />
-              <img className="trends-images-small" src={trends02} />
-            </div>
-            <img className="trends-images-big" src={trends03} />
+      </div>
+      <div className="trends-wrapper">
+        <h2>Tendências</h2>
+        <div className="trends-images">
+          <div className="trends-images-right">
+            <img className="trends-images-small" src={trends01} />
+            <img className="trends-images-small" src={trends02} />
           </div>
+          <img className="trends-images-big" src={trends03} />
+        </div>
+      </div>
+      <div className="popular-wrapper">
+        <h2>Populares</h2>
+        <div className="products-items">
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
         </div>
       </div>
     </div>

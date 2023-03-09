@@ -1,10 +1,13 @@
 .carousel-container-wapper {
   margin-top: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .trends-wrapper {
   h2 {
-    font-family: "Montserrat", sans-serif;
     font-size: 22px;
     text-align: center;
     margin: 50px;
@@ -32,7 +35,56 @@
     }
 
     .trends-images-big {
-      width: 500px;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 900px) {
+      .trends-images-small {
+        display: none;
+      }
+    }
+  }
+}
+
+.popular-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 30px;
+
+  .products-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+    text-align: center;
+    margin: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 1250px) {
+    .products-items {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 925px) {
+    .products-items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 670px) {
+    .products-items {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }
