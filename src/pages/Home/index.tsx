@@ -3,9 +3,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "./styles.scss";
 
-import image01 from "../../assets/images/slide01.jpg";
-import image02 from "../../assets/images/slide02.jpg";
-import image03 from "../../assets/images/slide03.jpg";
+import image01 from "../../assets/images/slides/slide01.jpg";
+import image02 from "../../assets/images/slides/slide02.jpg";
+import image03 from "../../assets/images/slides/slide03.jpg";
 
 export const Home = () => {
   return (
