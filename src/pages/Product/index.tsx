@@ -5,9 +5,10 @@ import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { getProducts } from "../../services/bob";
-import { BobObjectResponse } from "../../services/bob/types";
-import { handlerFilteredByID } from "./helpers";
+import { BobObjectResponse, BobResponse } from "../../services/bob/types";
+import { getFirstFourProducts, handlerFilteredByID } from "./helpers";
 import "./styles.scss";
+import { Cards } from "../../components/Cards";
 
 const Product = () => {
   const { id } = useParams();
@@ -15,6 +16,7 @@ const Product = () => {
   const [accordionOne, setAccordionOne] = useState(true);
   const [accordionTwo, setAccordionTwo] = useState(false);
   const [product, setProduct] = useState<BobObjectResponse>();
+  const [products, setProducts] = useState<BobResponse>();
   const [count, setCount] = useState(1);
 
   const handlerFiltersById = async () => {
@@ -23,7 +25,9 @@ const Product = () => {
       const data = await getProducts();
 
       const filteredData = handlerFilteredByID(data, Number(id));
+      const firstProducts = getFirstFourProducts(data);
 
+      setProducts(firstProducts);
       setProduct(filteredData);
     } catch (error) {
       console.log(error);
@@ -50,7 +54,6 @@ const Product = () => {
   return (
     <div>
       <Header />
-      <h2>Product</h2>
       <Banner
         height={150}
         description={`Home - Blusas e Camisas - ${product?.name}`}
@@ -156,7 +159,20 @@ const Product = () => {
           </div>
         </div>
       </div>
-
+      <div className="product-associated">
+        <h2>Produtos Relacionados</h2>
+        <div className="product-associated-items">
+          {products?.map((product) => (
+            <Cards
+              image={product.photo}
+              name={product.name}
+              price={product.price}
+              key={product.id}
+              id={product.id}
+            />
+          ))}
+        </div>
+      </div>
       <Footer />
     </div>
   );

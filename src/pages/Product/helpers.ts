@@ -5,3 +5,7 @@ export const handlerFilteredByID = (data: BobResponse, id: number) => {
 
   return dataFiltered[0];
 };
+
+export const getFirstFourProducts = (products: BobResponse): BobResponse => {
+  return products.slice(0, 4);
+};

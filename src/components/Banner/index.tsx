@@ -8,7 +8,7 @@ export const Banner = ({
 }: CategoryProductsProps) => {
   return (
     <div style={{ maxHeight: `${height}px` }} className="card">
-      {title ?? <h2>{title}</h2>}
+      {title ? <h2>{title}</h2> : null}
       <p>{description}</p>
     </div>
   );
