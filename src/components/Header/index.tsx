@@ -28,7 +28,7 @@ export const Header = () => {
         <li>Blusas</li>
         <li>Calças</li>
         <li>Acessórios</li>
-        <li>Outlet</li>
+        <li className="red-text">Outlet</li>
       </ul>
     </header>
   );
