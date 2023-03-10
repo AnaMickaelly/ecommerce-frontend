@@ -1,13 +1,13 @@
-import number from "../../assets/images/number.png";
 import "./styles.scss";
+import { CardProps } from "./types";
 
-export const Cards = () => {
+export const Cards = ({ image, name, price }: CardProps) => {
   return (
     <div className="card-conteiner">
-      <img src={number} alt="" />
+      <img src={image} alt="" />
       <div className="content">
-        <h3>Creative Adidas T-shirts</h3>
-        <p>R$ 150.55</p>
+        <h3>{name}</h3>
+        <p>{price}</p>
       </div>
     </div>
   );

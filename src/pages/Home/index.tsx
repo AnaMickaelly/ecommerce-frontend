@@ -12,9 +12,25 @@ import trends03 from "../../assets/images/home/tendencies02.jpg";
 import { Cards } from "../../components/Cards";
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { BobResponse } from "../../services/bob/types";
+import { getProducts } from "../../services/bob";
 
 export const Home = () => {
   const navigate = useNavigate();
+  const [products, setProducts] = useState<BobResponse>();
+
+  const handleDataProducts = async () => {
+    const data = await getProducts();
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    handleDataProducts();
+  }, []);
+
+  console.log(products);
+
   return (
     <div>
       <Header />
@@ -53,13 +69,6 @@ export const Home = () => {
       <div className="popular-wrapper">
         <h2>Populares</h2>
         <div className="products-items">
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
           <Cards />
         </div>
       </div>
