@@ -5,4 +5,10 @@
   color: #fff;
   border: none;
   padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
 }
