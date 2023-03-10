@@ -20,6 +20,7 @@ export const Header = () => {
     blouse: "Blusas",
     pants: "Calças",
     accessories: "Acessórios",
+    outlet: "Outlet",
   };
 
   return (
@@ -51,7 +52,12 @@ export const Header = () => {
         <li onClick={() => navigateToCategory(menu.accessories)}>
           {menu.accessories}
         </li>
-        <li className="red-text">Outlet</li>
+        <li
+          onClick={() => navigateToCategory(menu.outlet)}
+          className="red-text"
+        >
+          {menu.outlet}
+        </li>
       </ul>
     </header>
   );
