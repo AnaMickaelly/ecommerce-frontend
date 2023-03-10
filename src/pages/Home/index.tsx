@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { BobResponse } from "../../services/bob/types";
 import { getProducts } from "../../services/bob";
 import data from "../../mock/data.json";
+import { Footer } from "../../components/Footer";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -83,6 +84,7 @@ export const Home = () => {
           Ver mais produtos
         </Button>
       </div>
+      <Footer />
     </div>
   );
 };

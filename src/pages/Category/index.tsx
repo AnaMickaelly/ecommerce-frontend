@@ -1,9 +1,13 @@
+import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
 import "./styles.scss";
 
 const Category = () => {
   return (
     <div>
-      <h2 className="text">Category</h2>
+      <Header />
+
+      <Footer />
     </div>
   );
 };

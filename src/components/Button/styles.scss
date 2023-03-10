@@ -7,8 +7,16 @@
   padding: 12px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s;
+  height: 48px;
 
   &.uppercase {
     text-transform: uppercase;
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: #333333;
+    border: 1px solid #333333;
   }
 }
