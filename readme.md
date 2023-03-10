@@ -39,7 +39,7 @@ In another terminal run the command:
 
 ### Product
 
-![Desktop product](/.github/product.png "Desktop product")
+![Desktop product](/.github/product01.png "Desktop product")
 
 ## 🛠️ Built with
 
