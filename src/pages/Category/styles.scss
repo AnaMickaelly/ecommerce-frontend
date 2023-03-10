@@ -1,7 +1,3 @@
-.text {
-  color: red;
-}
-
 .wrapper-card-itens {
   display: flex;
   flex-direction: column;
@@ -14,8 +10,45 @@
   .products-items-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
     gap: 28px;
+  }
+
+  .container-filters {
+    display: flex;
+    flex-direction: column;
+    width: 68%;
+
+    .filter-by-category {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .filter-views {
+      margin: 25px 0;
+
+      .view {
+        justify-content: start;
+        width: 80%;
+        display: flex;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 300;
+        color: #a9a9a9;
+        gap: 20px;
+
+        .view-items {
+          display: flex;
+          gap: 4px;
+
+          .item {
+            color: black;
+          }
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 1250px) {
@@ -35,4 +68,9 @@
       grid-template-columns: repeat(1, 1fr);
     }
   }
+}
+
+.empty-data {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
 }
