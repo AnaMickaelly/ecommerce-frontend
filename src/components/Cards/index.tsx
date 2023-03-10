@@ -7,7 +7,12 @@ export const Cards = ({ image, name, price }: CardProps) => {
       <img src={image} alt="" />
       <div className="content">
         <h3>{name}</h3>
-        <p>{price}</p>
+        <p>
+          {price?.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </p>
       </div>
     </div>
   );

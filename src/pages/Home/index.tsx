@@ -15,10 +15,11 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BobResponse } from "../../services/bob/types";
 import { getProducts } from "../../services/bob";
+import data from "../../mock/data.json";
 
 export const Home = () => {
   const navigate = useNavigate();
-  const [products, setProducts] = useState<BobResponse>();
+  const [products, setProducts] = useState<BobResponse>(data);
 
   const handleDataProducts = async () => {
     const data = await getProducts();
@@ -28,8 +29,6 @@ export const Home = () => {
   useEffect(() => {
     handleDataProducts();
   }, []);
-
-  console.log(products);
 
   return (
     <div>
@@ -69,7 +68,14 @@ export const Home = () => {
       <div className="popular-wrapper">
         <h2>Populares</h2>
         <div className="products-items">
-          <Cards image="teste" name="teste" price={21} />
+          {products?.map((product) => (
+            <Cards
+              image={product.photo}
+              name={product.name}
+              price={product.price}
+              key={product.id}
+            />
+          ))}
         </div>
       </div>
       <div className="button-wrapper">
