@@ -1,0 +1,12 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    margin: 20px 0;
+    font-size: 52px;
+    font-family: "Montserrat", sans-serif;
+  }
+}

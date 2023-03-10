@@ -4,25 +4,31 @@ import instagram from "../../assets/icons/instagram.png";
 import pinterest from "../../assets/icons/pinterest.png";
 import tumblr from "../../assets/icons/tumblr.png";
 import "./styles.scss";
+import { useNavigate } from "react-router-dom";
 
 export const Footer = () => {
+  const navigate = useNavigate();
   const year = new Date();
+
+  const navigateNotFound = () => {
+    navigate("/not-found");
+  };
 
   return (
     <footer>
       <div className="footer-container">
         <div className="footer-links">
           <ul>
-            <li>Contato</li>
-            <li>Fretes e entrega</li>
-            <li>Como comprar</li>
-            <li>Trocas e devoluções</li>
+            <li onClick={navigateNotFound}>Contato</li>
+            <li onClick={navigateNotFound}>Fretes e entrega</li>
+            <li onClick={navigateNotFound}>Como comprar</li>
+            <li onClick={navigateNotFound}>Trocas e devoluções</li>
           </ul>
           <ul>
-            <li>Sobre</li>
-            <li>Na mídia</li>
-            <li>Segurança</li>
-            <li>Políticas</li>
+            <li onClick={navigateNotFound}>Sobre</li>
+            <li onClick={navigateNotFound}>Na mídia</li>
+            <li onClick={navigateNotFound}>Segurança</li>
+            <li onClick={navigateNotFound}>Políticas</li>
           </ul>
         </div>
         <div className="footer-contacts">
@@ -33,9 +39,9 @@ export const Footer = () => {
       <div className="footer-bottom">
         <p>Copyright @ {year.getFullYear()}</p>
         <ul>
-          <li>FAQ</li>
-          <li>Minha conta</li>
-          <li>Meus pedidos</li>
+          <li onClick={navigateNotFound}>FAQ</li>
+          <li onClick={navigateNotFound}>Minha conta</li>
+          <li onClick={navigateNotFound}>Meus pedidos</li>
         </ul>
         <div className="icons-footer">
           <img src={facebook} alt="Facebook" />

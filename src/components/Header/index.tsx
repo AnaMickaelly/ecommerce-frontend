@@ -1,8 +1,15 @@
 import "./styles.scss";
 import bag from "../../assets/icons/bag.png";
 import telephone from "../../assets/icons/telephone.png";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
+  const navigate = useNavigate();
+
+  const navigateNotFound = () => {
+    navigate("/not-found");
+  };
+
   return (
     <header className="container-header">
       <div>
@@ -23,11 +30,11 @@ export const Header = () => {
         </div>
       </div>
       <ul className="menu-itens">
-        <li>Home</li>
-        <li>Camisas</li>
-        <li>Blusas</li>
-        <li>Calças</li>
-        <li>Acessórios</li>
+        <li onClick={navigateNotFound}>Home</li>
+        <li onClick={navigateNotFound}>Camisas</li>
+        <li onClick={navigateNotFound}>Blusas</li>
+        <li onClick={navigateNotFound}>Calças</li>
+        <li onClick={navigateNotFound}>Acessórios</li>
         <li className="red-text">Outlet</li>
       </ul>
     </header>
