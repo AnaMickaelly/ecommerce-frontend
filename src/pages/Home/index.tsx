@@ -14,24 +14,31 @@ import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BobResponse } from "../../services/bob/types";
+import Lottie from "lottie-react";
 import { getProducts } from "../../services/bob";
-import data from "../../mock/data.json";
+import animation from "../../assets/animations/loading.json";
 import { Footer } from "../../components/Footer";
 
 export const Home = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState<BobResponse>();
+  const [loading, setLoading] = useState(false);
 
   const handleDataProducts = async () => {
-    const data = await getProducts();
-    setProducts(data);
+    try {
+      setLoading(true);
+      const data = await getProducts();
+      setProducts(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     handleDataProducts();
   }, []);
-
-  console.log(products);
 
   return (
     <div>
@@ -71,6 +78,7 @@ export const Home = () => {
       <div className="popular-wrapper">
         <h2>Populares</h2>
         <div className="products-items">
+          {loading ? <Lottie animationData={animation} /> : null}
           {products?.map((product) => (
             <Cards
               image={product.photo}

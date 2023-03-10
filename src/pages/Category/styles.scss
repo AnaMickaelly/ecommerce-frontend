@@ -1,3 +1,38 @@
 .text {
   color: red;
 }
+
+.wrapper-card-itens {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 90px;
+  margin-top: 200px;
+
+  .products-items-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 28px;
+  }
+
+  @media screen and (max-width: 1250px) {
+    .products-items-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 925px) {
+    .products-items-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 670px) {
+    .products-items-cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
