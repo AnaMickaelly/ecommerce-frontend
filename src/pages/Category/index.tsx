@@ -113,6 +113,7 @@ const Category = () => {
               name={product.name}
               price={product.price}
               key={product.id}
+              id={product.id}
             />
           ))}
         </div>
