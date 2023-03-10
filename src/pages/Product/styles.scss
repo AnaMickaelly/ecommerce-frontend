@@ -1,0 +1,146 @@
+.product-container {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-evenly;
+
+  .product-photo {
+    img {
+      width: 500px;
+    }
+  }
+
+  .product-info {
+    .product-principal-info {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 26px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #ccc;
+
+      font-family: "Montserrat", sans-serif;
+
+      h2 {
+        font-size: 24px;
+        color: #a9a9a9;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      p {
+        width: 300px;
+        font-size: 14px;
+        color: #a9a9a9;
+      }
+    }
+  }
+
+  .product-custom-sale {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-transform: uppercase;
+    padding-top: 16px;
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: 16px;
+
+    .custom-colors {
+      p {
+        font-size: 14px;
+      }
+
+      .select-colors {
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        .color {
+          cursor: pointer;
+          width: 16px;
+          height: 16px;
+        }
+
+        .blue {
+          background-color: #0069cb;
+        }
+
+        .red {
+          background-color: #ff6565;
+        }
+
+        .purple {
+          background-color: #7854ff;
+        }
+
+        .green {
+          background-color: #00cc65;
+        }
+      }
+    }
+
+    .custom-sizes {
+      p {
+        font-size: 14px;
+      }
+
+      .select-sizes {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        margin-top: 8px;
+      }
+    }
+
+    .custom-sale {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 16px;
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+
+      .count-items {
+        width: 110px;
+        display: flex;
+        align-items: center;
+
+        padding: 10px;
+        justify-content: space-between;
+        border: 1px solid #a9a9a9;
+
+        p {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .accordion {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 16px;
+
+        .title {
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          h3 {
+            font-size: 12px;
+          }
+        }
+
+        .content {
+          text-transform: none;
+          width: 300px;
+          font-size: 13px;
+          color: #a9a9a9;
+        }
+      }
+    }
+  }
+}
