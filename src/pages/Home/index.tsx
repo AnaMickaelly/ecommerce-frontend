@@ -10,8 +10,11 @@ import trends01 from "../../assets/images/home/tendencies01.jpg";
 import trends02 from "../../assets/images/home/tendencies03.jpg";
 import trends03 from "../../assets/images/home/tendencies02.jpg";
 import { Cards } from "../../components/Cards";
+import { Button } from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Header />
@@ -19,15 +22,21 @@ export const Home = () => {
         <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
           <div>
             <img src={image01} />
-            <p className="legend">Shop now</p>
+            <p onClick={() => navigate("/category")} className="legend">
+              Shop now
+            </p>
           </div>
           <div>
             <img src={image02} />
-            <p className="legend">Shop now</p>
+            <p onClick={() => navigate("/category")} className="legend">
+              Shop now
+            </p>
           </div>
           <div>
             <img src={image03} />
-            <p className="legend">Shop now</p>
+            <p onClick={() => navigate("/category")} className="legend">
+              Shop now
+            </p>
           </div>
         </Carousel>
       </div>
@@ -53,6 +62,11 @@ export const Home = () => {
           <Cards />
           <Cards />
         </div>
+      </div>
+      <div className="button-wrapper">
+        <Button width={180} uppercase onClick={() => navigate("/category")}>
+          Ver mais produtos
+        </Button>
       </div>
     </div>
   );
