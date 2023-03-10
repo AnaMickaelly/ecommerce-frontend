@@ -5,8 +5,7 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { getProducts } from "../../services/bob";
 import { BobResponse } from "../../services/bob/types";
-import { CategoryProducts } from "./components";
-import { ParamsProps } from "./components/types";
+import { ParamsProps } from "../../components/Banner/types";
 import "./styles.scss";
 import animation from "../../assets/animations/loading.json";
 import empty from "../../assets/animations/empty.json";
@@ -14,6 +13,7 @@ import Lottie from "lottie-react";
 import { Button } from "../../components/Button";
 import { handlerFilterDataByGender } from "./helpers";
 import { FiltersType } from "./types";
+import { Banner } from "../../components/Banner";
 
 const Category = () => {
   const { type } = useParams<ParamsProps>();
@@ -58,7 +58,9 @@ const Category = () => {
   return (
     <div>
       <Header />
-      {type ? <CategoryProducts title={type} /> : null}
+      {type ? (
+        <Banner description="Home - Blusas e Camisas - Blusas" title={type} />
+      ) : null}
       <div className="wrapper-card-itens">
         <div className="container-filters">
           <div className="filter-by-category">

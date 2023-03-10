@@ -1,5 +1,7 @@
 export type CategoryProductsProps = {
-  title: string;
+  title?: string;
+  description: string;
+  height?: number;
 };
 
 export type ParamsProps = {

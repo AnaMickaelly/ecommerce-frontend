@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Banner } from "../../components/Banner";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { getProducts } from "../../services/bob";
@@ -9,7 +10,7 @@ import { handlerFilteredByID } from "./helpers";
 const Product = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
-  const [products, setProducts] = useState<BobObjectResponse>();
+  const [product, setProduct] = useState<BobObjectResponse>();
 
   const handlerFiltersById = async () => {
     try {
@@ -18,7 +19,7 @@ const Product = () => {
 
       const filteredData = handlerFilteredByID(data, Number(id));
 
-      setProducts(filteredData);
+      setProduct(filteredData);
     } catch (error) {
       console.log(error);
     } finally {
@@ -34,7 +35,11 @@ const Product = () => {
     <div>
       <Header />
       <h2>Product</h2>
-      {JSON.stringify(products)}
+      <Banner
+        height={150}
+        description={`Home - Blusas e Camisas - ${product?.name}`}
+      />
+      {JSON.stringify(product)}
       <h2>{id}</h2>
       <Footer />
     </div>
