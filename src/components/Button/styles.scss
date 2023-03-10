@@ -1,4 +1,7 @@
 .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #333333;
   max-width: 100px;
   width: 100%;
@@ -12,6 +15,15 @@
 
   &.uppercase {
     text-transform: uppercase;
+  }
+
+  &.opacity {
+    background-color: transparent;
+    color: #333333;
+
+    &:hover {
+      border: 1px solid #333333;
+    }
   }
 
   &:hover {

@@ -6,11 +6,14 @@ export const Button = ({
   onClick,
   uppercase,
   width,
+  opacity,
 }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`button-container ${uppercase ? "uppercase" : ""}`}
+      className={`button-container ${uppercase ? "uppercase" : ""} ${
+        opacity ? "opacity" : ""
+      }`}
       style={{ maxWidth: `${width}px` }}
     >
       {children}
