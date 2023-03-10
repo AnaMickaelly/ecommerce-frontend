@@ -69,7 +69,7 @@ export const Home = () => {
       <div className="popular-wrapper">
         <h2>Populares</h2>
         <div className="products-items">
-          <Cards />
+          <Cards image="teste" name="teste" price={21} />
         </div>
       </div>
       <div className="button-wrapper">
