@@ -1,9 +1,13 @@
 import axios from "axios";
 import { BobResponse } from "./types";
 
+type BobResponseData = {
+  data: BobResponse;
+};
+
 export const getProducts = async (): Promise<BobResponse> => {
-  const data: BobResponse = await axios.get(
-    "http://bob-teste-front-end.herokuapp.com/api/products.json",
+  const { data }: BobResponseData = await axios.get(
+    "https://cors-anywhere.herokuapp.com/http://bob-teste-front-end.herokuapp.com/api/products.json",
     {
       headers: {
         "Access-Control-Allow-Origin": "*",

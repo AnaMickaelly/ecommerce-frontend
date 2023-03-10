@@ -20,7 +20,7 @@ import { Footer } from "../../components/Footer";
 
 export const Home = () => {
   const navigate = useNavigate();
-  const [products, setProducts] = useState<BobResponse>(data);
+  const [products, setProducts] = useState<BobResponse>();
 
   const handleDataProducts = async () => {
     const data = await getProducts();
@@ -30,6 +30,8 @@ export const Home = () => {
   useEffect(() => {
     handleDataProducts();
   }, []);
+
+  console.log(products);
 
   return (
     <div>

@@ -6,8 +6,16 @@ import { useNavigate } from "react-router-dom";
 export const Header = () => {
   const navigate = useNavigate();
 
-  const navigateNotFound = () => {
-    navigate("/not-found");
+  const navigateToCategory = (type: string) => {
+    navigate(`category/${type}`);
+  };
+
+  const menu = {
+    home: "Home",
+    shirt: "Camisas",
+    blouse: "Blusas",
+    pants: "Calças",
+    accessories: "Acessórios",
   };
 
   return (
@@ -30,11 +38,13 @@ export const Header = () => {
         </div>
       </div>
       <ul className="menu-itens">
-        <li onClick={navigateNotFound}>Home</li>
-        <li onClick={navigateNotFound}>Camisas</li>
-        <li onClick={navigateNotFound}>Blusas</li>
-        <li onClick={navigateNotFound}>Calças</li>
-        <li onClick={navigateNotFound}>Acessórios</li>
+        <li onClick={() => navigateToCategory(menu.home)}>{menu.home}</li>
+        <li onClick={() => navigateToCategory(menu.shirt)}>{menu.shirt}</li>
+        <li onClick={() => navigateToCategory(menu.blouse)}>{menu.blouse}</li>
+        <li onClick={() => navigateToCategory(menu.pants)}>{menu.pants}</li>
+        <li onClick={() => navigateToCategory(menu.accessories)}>
+          {menu.accessories}
+        </li>
         <li className="red-text">Outlet</li>
       </ul>
     </header>
