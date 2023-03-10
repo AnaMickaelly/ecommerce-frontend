@@ -7,6 +7,7 @@ export const Button = ({
   uppercase,
   width,
   opacity,
+  height,
 }: ButtonProps) => {
   return (
     <button
@@ -14,7 +15,7 @@ export const Button = ({
       className={`button-container ${uppercase ? "uppercase" : ""} ${
         opacity ? "opacity" : ""
       }`}
-      style={{ maxWidth: `${width}px` }}
+      style={{ maxWidth: `${width}px`, maxHeight: `${height}px` }}
     >
       {children}
     </button>

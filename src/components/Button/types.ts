@@ -5,5 +5,6 @@ export type ButtonProps = {
   onClick?: () => void;
   uppercase?: boolean;
   width?: number;
+  height?: number;
   opacity?: boolean;
 };
